@@ -1,38 +1,45 @@
 <template>
+    <div class="float-right">
     <Button
           @btn-click="toggleShow()"
         btnClass = "icon-only"
         showIcon
         icon= "options-outline" />
+    </div>
+
     <div class="filters" v-if=show>
-    <Button
-          @btn-click="toggleAll()"
-          text= "All"
-        btnClass = "icon-only"
-        showIcon
-        icon= "color-filter-outline" />
+    <div>
+        <h3 style="display:inline-block"> Let´s talk about: </h3>
+        <Button
+              @btn-click="removeFilters()"
+              text= "Remove filters"
+            btnClass = "icon-only float-right"
+            showIcon="false"
+            />
+
+    </div>
+
 
     <Button
               @btn-click="toggleHobbies()"
               text= "Hobbies"
-            btnClass = "icon-only"
+            :btnClass = "hobbies==true? 'filter-selected': 'filter-unselected'"
             showIcon
             icon= "bicycle-outline" />
 
      <Button
       @btn-click="togglePolitics()"
       text= "Politics"
-    btnClass = "icon-only"
+    :btnClass = "politics==true? 'filter-selected': 'filter-unselected'"
     showIcon
     icon= "earth-outline" />
 
     <Button
           @btn-click="toggleKids()"
           text= "Kids"
-        btnClass = "icon-only"
+        :btnClass = "kids==true? 'filter-selected': 'filter-unselected'"
         showIcon
         icon= "extension-puzzle-outline" />
-
 
     </div>
 </template>
@@ -50,7 +57,6 @@ export default {
   },
   data: function(){
     return{
-        all: true,
         hobbies: false,
         politics: false,
         kids: false,
@@ -65,27 +71,33 @@ export default {
     toggleShow(){
        this.show = !this.show
     },
-    async toggleAll(){
-        this.all =!this.all
+    async removeFilters(){
+            this.hobbies=false
+            this.kids=false
+            this.politics=false
+            this.show=false
       },
      async toggleHobbies(){
+        this.hobbies=!this.hobbies
         if (this.hobbies==false){
             this.all=false
         }
-        this.hobbies=!this.hobbies
+
       },
      async togglePolitics(){
+        this.politics=!this.politics
         if (this.politics==false){
            this.all=false
         }
-        this.politics=!this.politics
+
       },
 
       async toggleKids(){
-        if (this.politics==false){
+        this.kids=!this.kids
+        if (this.kids==false){
             this.all=false
         }
-        this.kids=!this.kids
+
        }
     }
 }
@@ -94,7 +106,7 @@ export default {
 
   <style scoped>
 
-  button{
+  .float-right{
     float: right;
   }
 

@@ -126,7 +126,29 @@ div {
  color: var(--blue);
  background: var(--white);
  min-width: 0px;
- padding: 2px 2px 2px 2px;
+ padding: 0px 0px 0px 0px;
+ height:1.0em;
+}
+
+.filter-selected{
+ border: 1px solid var(--blue);
+ color: var(--blue);
+ background: var(--white);
+ min-width: 80px;
+   padding: 2px 5px 2px 0px;
+   height: 2.3em;
+   font-size: 14px;
+}
+
+.filter-unselected{
+ border: 1px solid var(--greytext);
+  color: var(--greytext);
+  background: var(--white);
+  min-width: 80px;
+  padding: 2px 5px 2px 0px;
+  height: 2.3em;
+  font-size: 14px;
+
 }
 
 

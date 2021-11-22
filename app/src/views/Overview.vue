@@ -2,22 +2,29 @@
   <div class="outer-wrapper">
     <div class="toggle-wrapper">
         <label class="switch" >
-            <input type="checkbox" checked>
+            <input type="checkbox" checked v-on:change="toggleActive()">
             <span class="slider round"></span>
         </label>
     </div>
-    <div>
-        <h2 style="display:inline-block"> People near you </h2>
-        <FilterBar />
-    </div>
-    <Loading :loading="this.loading" />
-    <NearUserPreview
-      v-for="nearUser in nearUsers"
-      :key="nearUser"
-      :nearUser="nearUser"
-      :highlight="false"
-    />
+
+    <div v-if=active class="results">
+        <div>
+            <h2 style="display:inline-block"> People near you </h2>
+            <FilterBar />
+        </div>
+        <Loading :loading="this.loading" />
+        <NearUserPreview
+        v-for="nearUser in nearUsers"
+        :key="nearUser"
+        :nearUser="nearUser"
+        :highlight="false"
+        />
+     </div>
+     <div>
+        <h2 class="center-vertically"> Turn on and connect to people around you!</h2>
+     </div>
   </div>
+
 </template>
 
 <script>
@@ -36,6 +43,7 @@ export default {
     return {
       nearUsers: ["a", "b"],
       loading: false,
+      active: true
     };
   },
   async created() {
@@ -77,6 +85,10 @@ export default {
                       ]
         return this.nearUsers
     },
+    toggleActive(){
+    console.log("toggled")
+        this.active= !this.active;
+    }
   },
 };
 </script>
@@ -146,6 +158,15 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.center-vertically{
+   height: 80vh;
+  display:flex;/*this is  what was missing */
+  flex-flow:column;/*this is  what was missing too*/
+  align-items: center;
+  justify-content: center;
+  text-align:center
 }
 
 </style>
