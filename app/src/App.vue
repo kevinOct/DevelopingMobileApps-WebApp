@@ -1,17 +1,15 @@
 <template>
     <link href='https://fonts.googleapis.com/css?family=Athiti' rel='stylesheet'>
 
-  <Overview />
+  <router-view></router-view>
 
 </template>
 
 <script>
-import Overview from './views/Overview.vue'
 
 export default {
   name: 'App',
   components: {
-    Overview
   }
 }
 </script>

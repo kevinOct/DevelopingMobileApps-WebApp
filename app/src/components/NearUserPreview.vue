@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     openProfile(){
-         this.$router.push('/Overview');
+         this.$router.push('/Profile');
             }
   },
 };
