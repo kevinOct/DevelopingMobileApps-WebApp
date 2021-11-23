@@ -42,7 +42,9 @@ export default {
     Button,
   },
   methods: {
-
+    openProfile(){
+         this.$router.push('/Overview');
+            }
   },
 };
 </script>

@@ -20,9 +20,9 @@
         :highlight="false"
         />
      </div>
-     <div>
-        <h2 class="center-vertically"> Turn on and connect to people around you!</h2>
-     </div>
+     <div v-if=!active>
+             <h2 class="center-vertically"> Turn on and connect to people around you!</h2>
+      </div>
   </div>
 
 </template>
