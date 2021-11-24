@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue'
+import Header from '../components/header.vue'
 import Button from '../components/Button.vue'
 import Intro from '../components/Intro.vue'
 
