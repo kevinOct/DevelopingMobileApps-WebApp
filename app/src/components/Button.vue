@@ -1,8 +1,9 @@
 <template>
-  <button @click="onClick()" :class="btnClass" class="btn" :style="{background:color, color:font_color>
-    <ion-icon v-if="showIcon==true" :name="icon" size="large" :style="{color:icon_color}"></ion-icon>
-    {{ text }}
+  <button @click="onClick()" :class="btnClass" class="btn, button" :style="{background:color, color:font_color}">
+    <ion-icon v-if="showIcon==true" :name="icon" size="large"> </ion-icon>
+    {{text}}
   </button>
+  
 </template>
 
 <script>
@@ -22,13 +23,13 @@ export default {
       this.$emit("btn-click");
     },
   },
-};
+}
 </script>
 
-<style scoped>
-
+<style>
 
 button:hover {
   cursor: pointer;
 }
+
 </style>

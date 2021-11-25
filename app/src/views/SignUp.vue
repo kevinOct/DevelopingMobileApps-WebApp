@@ -1,18 +1,18 @@
 <template>
-<div class="container">
+<div class="main_container">
 <router-link to="/">Go back</router-link>
-<Title class="title" color="#3F414E" :showButton="true"/>
+<!--<Title class="title" color="#3F414E" :showButton="true"/>-->
 
 <Welcome text="Create your account"/>
 <LoginButtons/>
-<Form text="Sign Up"/>
+<Form @form-click="this.$router.replace('/welcome')" text="Sign Up"/>
 
 </div>
 
 </template>
 
 <script>
-    import Title from '../components/Title'
+    //import Title from '../components/Title'
     import Welcome from '../components/welcomeTitle.vue'
     import LoginButtons from '../components/loginButtons.vue'
     import Form from '../components/Form.vue'
@@ -20,7 +20,7 @@
 export default {
   name: 'App',
   components: {
-    Title,
+    //Title,
     Welcome,
     LoginButtons,
     Form,

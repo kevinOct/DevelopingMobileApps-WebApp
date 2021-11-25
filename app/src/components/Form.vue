@@ -1,14 +1,14 @@
 <template>
     <form @submit="onSubmit" class="add-form">
-    <div class="form-control">
+    <div class="form-control, form-control input">
       <input type="text" name="text" v-model="username" placeholder="Username" />
     </div>
 
-    <div class="form-control" v-show="onSignUpPage">
+    <div class="form-control, form-control input" v-show="onSignUpPage">
       <input type="text" name="text" v-model="email" placeholder="Email" />
     </div>
 
-    <div class="form-control">
+    <div class="form-control, form-control input">
       <input
         type="password"
         name="day"
@@ -22,7 +22,7 @@
       <input type="checkbox" v-model="reminder" name="reminder" />
     </div>
 
-    <input type="submit" v-bind:value="text" class="btn btn-block" />
+    <input @click="onClick()" type="submit" v-bind:value="text" class="button button-block" />
   </form>
 </template>
 
@@ -50,6 +50,13 @@
               return false
             }
           }
+        },
+
+        methods: {
+          onClick() {
+          this.$emit("form-click");
+          //this.$router.replace('/signup')
+          },
         }
     }
 
@@ -90,6 +97,27 @@
   font-size: 14px;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+@media all and (max-width: 415px){
+  input {
+    width: 250px;
+    font-size: 15px;
+  }
+
+  .add-form {
+    width: 250px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  .form-control input {
+    width: 90%;
+    height: 48px;
+  }
+  
 }
 
 </style>

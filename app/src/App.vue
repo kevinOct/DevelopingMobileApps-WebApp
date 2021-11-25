@@ -12,6 +12,7 @@ export default {
   components: {
   }
 }
+
 </script>
 
 
@@ -30,15 +31,17 @@ export default {
   --red: #bd1c00;
 }
 
-* {
+
+/** {
   margin: 0;
   padding: 0;
   font-family: Athiti, sans-serif;
   font-size: 18px;
-}
+}*/
 
 body {
-  background: white
+  background: #fdfbfd;
+  font-family: Athiti, sans-serif;
 }
 
 .page-container {
@@ -74,6 +77,49 @@ div {
 }
 
 /* Button styling */
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #8E97FD;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 38px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+  width: 500px;
+  height: 63px;
+  border: 1px solid #EBEAEC;
+}
+
+@media all and(max-width: 415px){
+  .main_container {
+    width: 255px;
+  }
+}
+
+@media all and (max-width: 415px){
+  .button {
+    width: 250px;
+    font-size: 12px;
+  }
+}
+
+.button:focus {
+  outline: none;
+}
+.button:active {
+  transform: scale(0.98);
+}
+.button-block {
+  width: 100%;
+}
+
 
 .btn {
   height: 2.8em;
@@ -163,6 +209,20 @@ div {
   border-radius: 4px;
 }
 
+.main_container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  overflow: auto;
+  min-height: 300px;
+  /*border: 1px solid steelblue;*/
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 /* Text styling */
 
 h1{
@@ -179,6 +239,14 @@ h2 {
 h3{
   font-size: 18px;
   font-weight: normal
+}
+
+/* Image styling */
+
+img {
+  border-radius: 35% 61% 38% 62% / 34% 34% 65% 66% ;
+  height: 200px;
+  width: 100%;
 }
 
 </style>

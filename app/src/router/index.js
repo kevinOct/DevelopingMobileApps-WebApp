@@ -4,6 +4,7 @@ import Profile from '../views/Profile.vue'
 import signUp from '../views/SignUp'
 import LogIn from '../views/LogIn'
 import welcomePage from '../views/welcomePage'
+import welcome from '../views/welcome'
 
 
 const routes = [
@@ -33,6 +34,11 @@ const routes = [
     name: 'signup',
     component: signUp,
   },
+  {
+    path: '/welcome',
+    name: 'welcome',
+    component: welcome,
+  }
 ];
 
 const router = createRouter({
