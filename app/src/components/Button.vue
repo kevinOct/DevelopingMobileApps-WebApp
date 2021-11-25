@@ -1,6 +1,6 @@
 <template>
-  <button @click="onClick()" :class="btnClass" class="btn">
-    <ion-icon v-if="showIcon==true" :name="icon" size="large"></ion-icon>
+  <button @click="onClick()" :class="btnClass" class="btn" :style="{background:color, color:font_color>
+    <ion-icon v-if="showIcon==true" :name="icon" size="large" :style="{color:icon_color}"></ion-icon>
     {{ text }}
   </button>
 </template>
@@ -13,6 +13,9 @@ export default {
     btnClass: String,
     showIcon: Boolean,
     icon: String,
+    color: String,
+    font_color: String,
+    icon_color: String,
   },
   methods: {
     onClick() {
