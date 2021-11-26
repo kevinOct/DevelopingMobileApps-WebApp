@@ -1,7 +1,7 @@
 <template>
     <div class="main_container">
     <div>
-      <img class="image" src="../assets/stockimage1.png" alt="">
+      <img class="startpage_image" src="../assets/stockimage1.png" alt="">
     </div>
     <Title color="#3F414E" :showButton="false"/>
     <WelcomeText title="Meet people next to you"/>
