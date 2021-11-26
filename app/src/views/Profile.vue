@@ -1,20 +1,17 @@
 <template>
-  <div class="container">
+  <div class="main_container">
     <Header />
     <figure>
       <img src="../assets/adam.png" alt="">
     </figure>
-  </div>
-  <div class="text-container">
-    <Intro Name="Adam" Status="Active" Interests="Sports, Nature, Music" />
 
-              <div class="btn-container">
-                  <Button
-                      @btn-click="openProfile()"
-                      text="Connect"
-                      btnClass="primary"
-                    />
-              </div>
+    <Intro Name="Adam" Status="Active" Interests="Sports, Nature, Music" />
+    <Button
+        @btn-click="openProfile()"
+        text="Connect"
+        btnClass="primary"
+    />
+    
   </div>
 </template>
 
@@ -45,5 +42,9 @@ export default {
 
 .btn-container {
   align-self: flex-end;
+}
+
+img {
+  width: 400px;
 }
 </style>
