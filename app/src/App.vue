@@ -243,7 +243,7 @@ h3{
 
 /* Image styling */
 
-img {
+.startpage_image {
   border-radius: 35% 61% 38% 62% / 34% 34% 65% 66% ;
   height: 200px;
   width: 100%;
